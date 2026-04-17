@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — MindGames</title>
+  <style>
+    :root {
+      --bg:       #0f0f1a;
+      --card:     #1a1a2e;
+      --border:   #2a2a3e;
+      --text:     #e8e8f0;
+      --subtext:  #8888a8;
+      --accent:   #7b68ee;
+      --accent2:  #4a90d9;
+      --green:    #3ecf8e;
+      --red:      #e05c5c;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── Header ───────────────────────────── */
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .logo { font-size: 64px; margin-bottom: 12px; }
+    .app-name {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: 1px;
+    }
+    .app-name span { color: var(--accent); }
+    .tagline {
+      color: var(--subtext);
+      font-size: 15px;
+      margin-top: 6px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .badge {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+
+    /* ── Layout ───────────────────────────── */
+    .wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Meta bar ─────────────────────────── */
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .meta-chip {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--subtext);
+    }
+    .meta-chip strong { color: var(--text); }
+
+    /* ── Section ──────────────────────────── */
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+    section:hover {
+      border-color: var(--accent);
+      transition: border-color 0.2s;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .section-icon {
+      font-size: 28px;
+      width: 48px;
+      height: 48px;
+      background: var(--bg);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    h2 {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    p { color: var(--subtext); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--text); }
+
+    /* ── List ─────────────────────────────── */
+    ul, ol {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+    li {
+      color: var(--subtext);
+      margin-bottom: 8px;
+    }
+    li strong { color: var(--text); }
+
+    /* ── Data table ───────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    .data-table th {
+      background: var(--bg);
+      color: var(--accent);
+      font-weight: 700;
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--subtext);
+      vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 600; }
+
+    /* ── Tags ─────────────────────────────── */
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .tag-yes  { background: #3ecf8e22; color: var(--green); border: 1px solid #3ecf8e44; }
+    .tag-no   { background: #e05c5c22; color: var(--red);   border: 1px solid #e05c5c44; }
+    .tag-opt  { background: #f0a50022; color: #f0a500;      border: 1px solid #f0a50044; }
+
+    /* ── Highlight box ────────────────────── */
+    .highlight {
+      background: #7b68ee18;
+      border: 1px solid #7b68ee44;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+    .highlight p { color: var(--text); margin: 0; }
+
+    /* ── Contact card ─────────────────────── */
+    .contact-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .contact-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 26px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .contact-info { flex: 1; }
+    .contact-name { color: var(--text); font-weight: 700; font-size: 16px; }
+    .contact-email {
+      color: var(--accent);
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .contact-email:hover { text-decoration: underline; }
+    .contact-role { color: var(--subtext); font-size: 13px; margin-top: 2px; }
+
+    /* ── Footer ───────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--subtext);
+      font-size: 13px;
+    }
+    footer .footer-logo { font-size: 32px; margin-bottom: 8px; }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Responsive ───────────────────────── */
+    @media (max-width: 600px) {
+      header { padding: 36px 20px 32px; }
+      .app-name { font-size: 28px; }
+      .logo { font-size: 52px; }
+      section { padding: 22px 20px; }
+      .wrapper { padding: 32px 16px 60px; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────── -->
+<header>
+  <div class="logo">🧠</div>
+  <div class="app-name">Mind<span>Games</span></div>
+  <div class="tagline">Brain Training App</div>
+  <div class="badge">Privacy Policy</div>
+</header>
+
+<!-- ── Content ─────────────────────────────────────────────── -->
+<div class="wrapper">
+
+  <!-- Meta -->
+  <div class="meta">
+    <div class="meta-chip">📅 <strong>Effective Date:</strong> April 17, 2025</div>
+    <div class="meta-chip">🔄 <strong>Last Updated:</strong> April 17, 2025</div>
+    <div class="meta-chip">📦 <strong>Package:</strong> com.mindgames.app</div>
+  </div>
+
+  <!-- 1. Overview -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">👋</div>
+      <h2>Overview</h2>
+    </div>
+    <p>
+      Welcome to <strong>MindGames</strong>. This Privacy Policy explains how we collect,
+      use, and protect your information when you use our brain-training mobile application.
+    </p>
+    <p>
+      By using MindGames, you agree to the practices described in this policy.
+      If you do not agree, please discontinue use of the app.
+    </p>
+    <div class="highlight">
+      <p>
+        🔒 <strong>Short version:</strong> We collect only what's necessary to run
+        leaderboards and sync your scores. We never sell your data. You can play
+        as a Guest with zero personal data collected.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Information We Collect -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>Information We Collect</h2>
+    </div>
+
+    <p>We collect different information depending on how you choose to sign in:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Google Sign-In</th>
+          <th>Guest Mode</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Display Name</td>
+          <td><span class="tag tag-yes">Collected</span></td>
+          <td><span class="tag tag-no">Not collected</span></td>
+          <td>Show on leaderboard</td>
+        </tr>
+        <tr>
+          <td>Email Address</td>
+          <td><span class="tag tag-yes">Collected</span></td>
+          <td><span class="tag tag-no">Not collected</span></td>
+          <td>Account identification</td>
+        </tr>
+        <tr>
+          <td>Profile Photo URL</td>
+          <td><span class="tag tag-opt">Optional</span></td>
+          <td><span class="tag tag-no">Not collected</span></td>
+          <td>Leaderboard avatar</td>
+        </tr>
+        <tr>
+          <td>Anonymous User ID</td>
+          <td><span class="tag tag-yes">Collected</span></td>
+          <td><span class="tag tag-yes">Collected</span></td>
+          <td>Link scores to account</td>
+        </tr>
+        <tr>
+          <td>Game Scores</td>
+          <td><span class="tag tag-yes">Collected</span></td>
+          <td><span class="tag tag-yes">Collected</span></td>
+          <td>Leaderboards & profile</td>
+        </tr>
+        <tr>
+          <td>Games Played Count</td>
+          <td><span class="tag tag-yes">Collected</span></td>
+          <td><span class="tag tag-yes">Collected</span></td>
+          <td>Profile statistics</td>
+        </tr>
+        <tr>
+          <td>Device Info / IP</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+          <td><span class="tag tag-no">Not collected</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+          <td><span class="tag tag-no">Not collected</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>Contacts / Camera / Mic</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+          <td><span class="tag tag-no">Not collected</span></td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. How We Use Your Information -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <h2>How We Use Your Information</h2>
+    </div>
+    <p>We use the information we collect <strong>only</strong> for the following purposes:</p>
+    <ul>
+      <li>Display your name and scores on the <strong>global leaderboards</strong></li>
+      <li>Save and sync your <strong>best scores</strong> across sessions and devices</li>
+      <li>Show your <strong>personal profile</strong> with game statistics</li>
+      <li>Authenticate you securely via <strong>Firebase Authentication</strong></li>
+      <li>Prevent duplicate entries on leaderboards</li>
+    </ul>
+    <p>We do <strong>not</strong> use your data for advertising, profiling, or any commercial purposes.</p>
+  </section>
+
+  <!-- 4. Third-Party Services -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>Third-Party Services</h2>
+    </div>
+    <p>MindGames uses the following third-party services operated by Google:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Provider</th>
+          <th>Purpose</th>
+          <th>Privacy Policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Firebase Authentication</td>
+          <td>Google LLC</td>
+          <td>User sign-in (Google & Guest)</td>
+          <td><a href="https://firebase.google.com/support/privacy" style="color:#7b68ee">View →</a></td>
+        </tr>
+        <tr>
+          <td>Cloud Firestore</td>
+          <td>Google LLC</td>
+          <td>Store scores & user profiles</td>
+          <td><a href="https://firebase.google.com/support/privacy" style="color:#7b68ee">View →</a></td>
+        </tr>
+        <tr>
+          <td>Google Sign-In</td>
+          <td>Google LLC</td>
+          <td>OAuth authentication</td>
+          <td><a href="https://policies.google.com/privacy" style="color:#7b68ee">View →</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:16px;">
+      All data stored via Firebase is hosted on Google Cloud infrastructure and
+      subject to Google's security and privacy standards. Data may be stored on
+      servers located outside your country.
+    </p>
+  </section>
+
+  <!-- 5. Data Sharing -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🚫</div>
+      <h2>Data Sharing & Disclosure</h2>
+    </div>
+    <p>We <strong>do not sell, trade, rent, or share</strong> your personal information with any third parties for commercial purposes.</p>
+    <p>Your data may be disclosed only in the following limited cases:</p>
+    <ul>
+      <li><strong>Leaderboards:</strong> Your display name and scores are visible to all app users on the public leaderboard</li>
+      <li><strong>Legal requirement:</strong> If required by law, court order, or government authority</li>
+      <li><strong>Safety:</strong> To protect the rights and safety of users or the public</li>
+    </ul>
+    <div class="highlight">
+      <p>⚠️ <strong>Leaderboard visibility:</strong> When you sign in with Google, your name appears on the public leaderboard. Guest users appear as "Guest" with no identifiable information.</p>
+    </div>
+  </section>
+
+  <!-- 6. Data Retention -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🗃️</div>
+      <h2>Data Retention</h2>
+    </div>
+    <p>We retain your data for as long as your account is active or as needed to provide the service.</p>
+    <ul>
+      <li><strong>Google Sign-In accounts:</strong> Data retained until you request deletion</li>
+      <li><strong>Guest accounts:</strong> Anonymous data is retained indefinitely but contains no personal information</li>
+      <li><strong>Game scores:</strong> Retained to maintain leaderboard history</li>
+    </ul>
+    <p>Upon account deletion request, all personally identifiable data will be removed within <strong>30 days</strong>.</p>
+  </section>
+
+  <!-- 7. Your Rights -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>Your Rights</h2>
+    </div>
+    <p>You have the following rights regarding your data:</p>
+    <ul>
+      <li>✅ <strong>Access:</strong> Request a copy of the data we hold about you</li>
+      <li>✅ <strong>Correction:</strong> Request correction of inaccurate data</li>
+      <li>✅ <strong>Deletion:</strong> Request deletion of your account and all associated data</li>
+      <li>✅ <strong>Opt-out:</strong> Play as Guest to avoid any personal data collection</li>
+      <li>✅ <strong>Portability:</strong> Request your data in a portable format</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at the email address below.</p>
+  </section>
+
+  <!-- 8. Children's Privacy -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">👦</div>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>
+      MindGames is rated <strong>Everyone (E)</strong> and is suitable for all ages.
+      However, we do not knowingly collect personal information from children under
+      the age of <strong>13</strong> without verifiable parental consent.
+    </p>
+    <p>
+      Children under 13 should use the <strong>Guest mode</strong>, which requires
+      no personal information. If you believe a child has provided personal data
+      without consent, please contact us immediately and we will delete it.
+    </p>
+  </section>
+
+  <!-- 9. Security -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🔐</div>
+      <h2>Security</h2>
+    </div>
+    <p>We take reasonable measures to protect your data:</p>
+    <ul>
+      <li><strong>Encryption in transit:</strong> All data transmitted using HTTPS/TLS</li>
+      <li><strong>Firebase Security Rules:</strong> Users can only read/write their own data</li>
+      <li><strong>No passwords stored:</strong> Authentication handled entirely by Google</li>
+      <li><strong>Minimal collection:</strong> We only collect what is strictly necessary</li>
+    </ul>
+    <p>
+      While we implement industry-standard security measures, no method of
+      electronic storage or transmission is 100% secure. We cannot guarantee
+      absolute security.
+    </p>
+  </section>
+
+  <!-- 10. Changes -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <p>
+      We may update this Privacy Policy from time to time. Changes will be posted
+      on this page with an updated <strong>"Last Updated"</strong> date at the top.
+    </p>
+    <p>
+      For significant changes, we will notify users via an in-app notice.
+      Continued use of the app after changes constitutes acceptance of the
+      updated policy.
+    </p>
+  </section>
+
+  <!-- 11. Contact -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">📬</div>
+      <h2>Contact Us</h2>
+    </div>
+    <p>
+      For any questions, concerns, or data requests regarding this Privacy Policy,
+      please contact us:
+    </p>
+    <div class="contact-card">
+      <div class="contact-avatar">R</div>
+      <div class="contact-info">
+        <div class="contact-name">MindGames Support</div>
+        <a class="contact-email" href="mailto:riyas.pk.29@gmail.com">riyas.pk.29@gmail.com</a>
+        <div class="contact-role">Developer & Data Controller</div>
+      </div>
+    </div>
+    <p style="margin-top:16px;">We aim to respond to all requests within <strong>7 business days</strong>.</p>
+  </section>
+
+</div>
+
+<!-- ── Footer ───────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-logo">🧠</div>
+  <p><strong>MindGames</strong> — Challenge your brain daily</p>
+  <p style="margin-top:8px;">
+    © 2025 MindGames ·
+    <a href="mailto:riyas.pk.29@gmail.com">riyas.pk.29@gmail.com</a>
+  </p>
+  <p style="margin-top:8px; font-size:12px;">
+    Package: com.mindgames.app · Effective April 17, 2025
+  </p>
+</footer>
+
+</body>
+</html>
