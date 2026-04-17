@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account — MindGames</title>
+  <style>
+    :root {
+      --bg:      #0f0f1a;
+      --card:    #1a1a2e;
+      --border:  #2a2a3e;
+      --text:    #e8e8f0;
+      --subtext: #8888a8;
+      --accent:  #7b68ee;
+      --red:     #e05c5c;
+      --green:   #3ecf8e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .logo { font-size: 56px; margin-bottom: 12px; }
+    .app-name { font-size: 32px; font-weight: 900; }
+    .app-name span { color: var(--accent); }
+    .page-title {
+      margin-top: 16px;
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 20px;
+    }
+
+    .wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .section-icon {
+      font-size: 26px;
+      width: 48px;
+      height: 48px;
+      background: var(--bg);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    h2 { font-size: 18px; font-weight: 800; color: var(--text); }
+
+    p { color: var(--subtext); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+    p strong { color: var(--text); }
+
+    ol, ul { padding-left: 22px; margin: 10px 0; }
+    li { color: var(--subtext); margin-bottom: 10px; }
+    li strong { color: var(--text); }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; padding-bottom: 0; }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 900;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .step-content {}
+    .step-title { color: var(--text); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .step-desc  { color: var(--subtext); font-size: 14px; }
+
+    .email-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .email-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 24px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .email-label { color: var(--subtext); font-size: 13px; margin-bottom: 4px; }
+    .email-link {
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .email-link:hover { text-decoration: underline; }
+
+    .warning-box {
+      background: #e05c5c18;
+      border: 1px solid #e05c5c44;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+    .warning-box p { color: var(--text); margin: 0; }
+
+    .info-box {
+      background: #7b68ee18;
+      border: 1px solid #7b68ee44;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+    .info-box p { color: var(--text); margin: 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 14px;
+    }
+    th {
+      background: var(--bg);
+      color: var(--accent);
+      font-weight: 700;
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--subtext);
+    }
+    tr:last-child td { border-bottom: none; }
+    td:first-child { color: var(--text); font-weight: 600; }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .tag-del  { background: #e05c5c22; color: var(--red);   border: 1px solid #e05c5c44; }
+    .tag-keep { background: #f0a50022; color: #f0a500;      border: 1px solid #f0a50044; }
+
+    .cta-btn {
+      display: block;
+      text-align: center;
+      background: var(--red);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 18px 32px;
+      border-radius: 14px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.85; }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--subtext);
+      font-size: 13px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      section { padding: 20px 18px; }
+      .wrapper { padding: 32px 16px 60px; }
+      header { padding: 36px 20px 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🧠</div>
+  <div class="app-name">Mind<span>Games</span></div>
+  <div class="page-title">🗑️ Delete Account &amp; Data</div>
+</header>
+
+<div class="wrapper">
+
+  <!-- What gets deleted -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>What Gets Deleted</h2>
+    </div>
+    <p>When you request account deletion, here is exactly what happens to your data:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Action</th>
+          <th>Timeframe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google display name</td>
+          <td><span class="tag tag-del">Deleted</span></td>
+          <td>Within 30 days</td>
+        </tr>
+        <tr>
+          <td>Email address</td>
+          <td><span class="tag tag-del">Deleted</span></td>
+          <td>Within 30 days</td>
+        </tr>
+        <tr>
+          <td>User profile</td>
+          <td><span class="tag tag-del">Deleted</span></td>
+          <td>Within 30 days</td>
+        </tr>
+        <tr>
+          <td>Firebase account (UID)</td>
+          <td><span class="tag tag-del">Deleted</span></td>
+          <td>Within 30 days</td>
+        </tr>
+        <tr>
+          <td>Game scores &amp; leaderboard entries</td>
+          <td><span class="tag tag-del">Deleted</span></td>
+          <td>Within 30 days</td>
+        </tr>
+        <tr>
+          <td>Best scores &amp; statistics</td>
+          <td><span class="tag tag-del">Deleted</span></td>
+          <td>Within 30 days</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warning-box" style="margin-top:16px;">
+      <p>⚠️ <strong>This action is permanent and cannot be undone.</strong> All your scores and progress will be lost forever.</p>
+    </div>
+  </section>
+
+  <!-- How to request -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">📬</div>
+      <h2>How to Request Deletion</h2>
+    </div>
+    <p>Send an email to our support address with the subject line <strong>"Delete My Account"</strong>:</p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-title">Compose a new email</div>
+        <div class="step-desc">Open your email app and create a new message.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-title">Use the correct subject line</div>
+        <div class="step-desc">Subject: <strong style="color:var(--text);">Delete My MindGames Account</strong></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-title">Include your account email</div>
+        <div class="step-desc">In the message body, include the Google email address linked to your MindGames account so we can identify it.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <div class="step-title">Send to our support email</div>
+        <div class="step-desc">We will confirm receipt within 2 business days and complete deletion within 30 days.</div>
+      </div>
+    </div>
+
+    <div class="email-box">
+      <div class="email-avatar">R</div>
+      <div>
+        <div class="email-label">Send your request to</div>
+        <a class="email-link" href="mailto:riyas.pk.29@gmail.com?subject=Delete%20My%20MindGames%20Account">
+          riyas.pk.29@gmail.com
+        </a>
+        <div class="email-label" style="margin-top:4px;">MindGames Support · Responds within 2 business days</div>
+      </div>
+    </div>
+
+    <a class="cta-btn" href="mailto:riyas.pk.29@gmail.com?subject=Delete%20My%20MindGames%20Account&body=Please%20delete%20my%20MindGames%20account%20and%20all%20associated%20data.%0A%0AMy%20account%20email%3A%20">
+      🗑️ Send Deletion Request
+    </a>
+
+    <div class="info-box">
+      <p>💡 <strong>Guest users:</strong> Anonymous guest accounts contain no personal information. No action is needed — guest data is not linked to your identity.</p>
+    </div>
+  </section>
+
+  <!-- Guest users -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">👤</div>
+      <h2>Guest / Anonymous Users</h2>
+    </div>
+    <p>If you played as a <strong>Guest</strong>, your account is completely anonymous. We have no name, email, or personal data linked to your session.</p>
+    <p>Guest accounts do not need to be deleted as they contain no personally identifiable information. Your scores are stored only under a random anonymous ID.</p>
+  </section>
+
+  <!-- Response time -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">⏱️</div>
+      <h2>Response Time</h2>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Step</th><th>Timeframe</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Confirmation email sent to you</td><td>Within 2 business days</td></tr>
+        <tr><td>Account data deleted from Firebase</td><td>Within 30 days</td></tr>
+        <tr><td>Scores removed from leaderboards</td><td>Within 30 days</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<footer>
+  <p>🧠 <strong>MindGames</strong> · com.mindgames.app</p>
+  <p style="margin-top:8px;">
+    Questions? <a href="mailto:riyas.pk.29@gmail.com">riyas.pk.29@gmail.com</a>
+  </p>
+  <p style="margin-top:8px;">
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+</body>
+</html>
